@@ -1,8 +1,8 @@
 -- MySQL dump 10.13  Distrib 5.7.27, for Linux (x86_64)
 --
--- Host: localhost    Database: test1
+-- Host: 127.0.0.1    Database: test1
 -- ------------------------------------------------------
--- Server version	5.7.27-0ubuntu0.18.04.1
+-- Server version	5.5.5-10.4.8-MariaDB-1:10.4.8+maria~bionic
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -14,6 +14,16 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Current Database: `test1`
+--
+
+/*!40000 DROP DATABASE IF EXISTS `test1`*/;
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `test1` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */;
+
+USE `test1`;
 
 --
 -- Table structure for table `alembic_version`
@@ -49,7 +59,7 @@ CREATE TABLE `post` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(140) COLLATE utf8_unicode_ci DEFAULT NULL,
   `slug` varchar(140) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `body` text COLLATE utf8_unicode_ci,
+  `body` text COLLATE utf8_unicode_ci DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `slug` (`slug`)
@@ -62,7 +72,7 @@ CREATE TABLE `post` (
 
 LOCK TABLES `post` WRITE;
 /*!40000 ALTER TABLE `post` DISABLE KEYS */;
-INSERT INTO `post` VALUES (1,'First post','First-post','First post body','2018-12-02 20:32:38'),(2,'Second post','Second-post','Second post body','2018-12-02 20:32:38'),(3,'Third post! 3-test','Third-post--3-test','Third post body','2018-12-02 20:32:38'),(4,'Fifth 5 post','Fifth-5-post','5 post','2018-12-19 16:54:52'),(6,'7 Post. Rev 2','7-Post','7 post body','2018-12-19 16:54:52'),(7,'8 post','8-post','8 post','2018-12-20 11:52:31'),(8,'9 post','9-post','post # 9','2018-12-20 11:52:31'),(9,'10 post','10-post','post 10','2018-12-20 11:52:31'),(10,'11 post','11-post','post 11','2018-12-20 11:52:31'),(11,'12 post','12-post','12 post','2018-12-20 11:52:31'),(12,'13 post','13-post','13 post','2018-12-20 11:52:31');
+INSERT INTO `post` VALUES (1,'First post','First-post','First post body','2018-12-02 20:32:38'),(2,'Second post','Second-post','Second post body','2018-12-02 20:32:38'),(3,'Third post! 3-test','Third-post--3-test','Third post body','2018-12-02 20:32:38'),(4,'Fifth 5 post','Fifth-5-post','5 post','2018-12-19 16:54:52'),(6,'7 Post. Rev 2','7-Post','7 post body','2018-12-19 16:54:52'),(7,'8 post','8-post','8 post','2018-12-20 11:52:31'),(8,'9 post','9-post','post # 9','2018-12-20 11:52:31'),(9,'10 post','10-post','post 10','2018-12-20 11:52:31'),(10,'11 post','11-post','post 11','2018-12-20 11:52:31'),(11,'12 post','12-post','12 post','2018-12-20 11:52:31'),(12,'13 post','13-post','13 post rrrrrrrr','2018-12-20 11:52:31');
 /*!40000 ALTER TABLE `post` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -205,4 +215,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-14 21:16:24
+-- Dump completed on 2019-10-17 22:27:46
